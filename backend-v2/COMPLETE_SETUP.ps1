@@ -98,9 +98,17 @@ if (Test-Path ".\venv") {
 }
 
 Write-Host "Installing dependencies..." -ForegroundColor Yellow
-& ".\venv\Scripts\Activate.ps1"
-pip install --upgrade pip --quiet
-pip install -r requirements.txt --quiet
+$venvPip = ".\venv\Scripts\pip.exe"
+$venvPython = ".\venv\Scripts\python.exe"
+
+if (Test-Path $venvPip) {
+    & $venvPip install --upgrade pip --quiet
+    & $venvPip install -r requirements.txt --quiet
+} else {
+    Write-Host "  Using direct python install..." -ForegroundColor Gray
+    & $venvPython -m pip install --upgrade pip --quiet
+    & $venvPython -m pip install -r requirements.txt --quiet
+}
 Write-Host "  Dependencies installed" -ForegroundColor Green
 
 Write-Host ""
