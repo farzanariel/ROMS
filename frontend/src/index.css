@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  }
+  
+  /* Dark mode text improvements */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    @apply text-gray-100;
+  }
+  
+  .dark p, .dark span, .dark div {
+    @apply text-gray-200;
+  }
+  
+  .dark label {
+    @apply text-gray-300;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-6 overflow-hidden;
+  }
+  
+  /* Live data indicator animation */
+  .live-indicator {
+    animation: live-pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes live-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.1);
+    }
+  }
+  
+  /* Button styles with dark mode */
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 text-sm sm:text-base;
+  }
+  
+  .btn-secondary {
+    @apply bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 font-medium py-2 px-3 sm:px-4 rounded-md transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 text-sm sm:text-base;
+  }
+  
+  /* Input styles with dark mode */
+  input, textarea, select {
+    @apply bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 rounded-md px-2 sm:px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm sm:text-base;
+  }
+  
+  /* Table styles with dark mode */
+  .table-container {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden;
+  }
+  
+  .table-header {
+    @apply bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100;
+  }
+  
+  .table-row {
+    @apply border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700;
+  }
+  
+  .table-cell {
+    @apply text-gray-900 dark:text-gray-100;
+  }
+  
+  /* Mobile responsive utilities */
+  .mobile-hidden {
+    @apply hidden sm:block;
+  }
+  
+  .mobile-only {
+    @apply block sm:hidden;
+  }
+  
+  .mobile-text-sm {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .mobile-text-base {
+    @apply text-sm sm:text-base;
+  }
+  
+  .mobile-text-lg {
+    @apply text-base sm:text-lg;
+  }
+  
+  .mobile-text-xl {
+    @apply text-lg sm:text-xl;
+  }
+  
+  .mobile-text-2xl {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  .mobile-text-3xl {
+    @apply text-2xl sm:text-3xl;
+  }
+  
+  .mobile-p-4 {
+    @apply p-3 sm:p-4;
+  }
+  
+  .mobile-p-6 {
+    @apply p-4 sm:p-6;
+  }
+  
+  .mobile-p-8 {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+  
+  .mobile-gap-4 {
+    @apply gap-3 sm:gap-4;
+  }
+  
+  .mobile-gap-6 {
+    @apply gap-4 sm:gap-6;
+  }
+  
+  .mobile-gap-8 {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+  
+  /* Sidebar transitions */
+  .sidebar-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .sidebar-collapsed {
+    @apply w-16;
+  }
+  
+  .sidebar-expanded {
+    @apply w-64;
+  }
+  
+  /* Bottom navigation spacing */
+  .mobile-bottom-nav {
+    @apply pb-20 lg:pb-0;
+  }
+  
+  /* Mobile-specific table adjustments */
+  .mobile-table {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .mobile-table-header {
+    @apply px-2 sm:px-6;
+  }
+  
+  .mobile-table-cell {
+    @apply px-2 sm:px-6;
+  }
+  
+  /* Status styles */
+  .status-verified {
+    @apply bg-success-50 dark:bg-success-900/20 text-success-600 dark:text-success-400 border border-success-200 dark:border-success-700;
+  }
+  
+  .status-unverified {
+    @apply bg-warning-50 dark:bg-warning-900/20 text-warning-600 dark:text-warning-400 border border-warning-200 dark:border-warning-700;
+  }
+  
+  .status-cancelled {
+    @apply bg-danger-50 dark:bg-danger-900/20 text-danger-600 dark:text-danger-400 border border-danger-200 dark:border-danger-700;
+  }
+  
+  /* Text clamp utility for KPI cards */
+  .text-clamp {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+  
+  /* KPI card number animation */
+  .animate-fade-in {
+    animation: fadeInScale 0.3s ease-out;
+  }
+  
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

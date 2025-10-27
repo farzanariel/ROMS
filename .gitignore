@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+*.pyc
+
+# Environment variables
+.env
+.env.local
+*.env
+
+# Database
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+backend.log
+backend-v2.log
+
+# Node modules
+node_modules/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Credentials
+credentials.json
+token.json
+
+# Cache
+backend/cache/
+.cache/
+
+# Temporary files
+*.tmp
+*.temp
+~*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Test files
+test_*.html
+*.test.js
+
+# Build artifacts
+*.zip
+*.tar.gz
+
